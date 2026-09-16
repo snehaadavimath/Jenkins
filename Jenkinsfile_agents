@@ -1,17 +1,23 @@
 pipeline{
 
-    agents {
+    agent {
         lable 'slave1'
     }
 
     stages {
 
-        stage('STAGE1'){
+        stage('STAGE1') {
             step {
                 sh '''
                 pwd
                 ls -a
                 '''
+            }
+        }
+
+        stage('stage2') {
+            step {
+               sh ' echo "this is stage 2" '
             }
         }
 
