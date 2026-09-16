@@ -1,0 +1,19 @@
+pipeline{
+
+    agents {
+        lable 'slave1'
+    }
+
+    stages {
+
+        stage('STAGE1'){
+            step {
+                sh '''
+                pwd
+                ls -a
+                '''
+            }
+        }
+
+    }
+}
