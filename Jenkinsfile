@@ -1,11 +1,20 @@
-node {  
-    stage('Build') { 
-        // 
-    }
-    stage('Test') { 
-        // 
-    }
-    stage('Deploy') { 
-        // 
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
     }
 }
