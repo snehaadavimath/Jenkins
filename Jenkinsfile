@@ -1,19 +1,12 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('Build') { 
+        stage('Test') {
             steps {
-                // 
-            }
-        }
-        stage('Test') { 
-            steps {
-                // 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                // 
+                echo 'Hello Jenkins'
+                sh 'pwd'
+                sh 'ls -lrt'
             }
         }
     }
