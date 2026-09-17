@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+
+    stages {
+
+        stage ("STAGE1") {
+            steps {  
+              catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+              sh '''
+              ps -ef
+              exit 1
+
+              '''
+            }
+        }
+
+        stage ("STAGE2") {
+            steps {
+                script {
+                    try{
+                        sh 'ls -lrt'
+                    }
+                    catch (Exception e){
+                        echo 'caught an error ${e.message}'
+                        currentBuild.result = 'FAILURE'
+                    }
+                    finally{
+                        echo 'Notifiying team'
+                    }
+                }
+            }
+        }
+    }
+
+}
