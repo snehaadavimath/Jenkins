@@ -1,0 +1,31 @@
+pipeline{
+
+    agent any
+
+    parameters {
+       parameters {
+        string defaultValue: 'Branch', description: 'This is from the dlecraive generator', name: 'Sneha'
+        choice choices: ['TEST', 'QA', 'PROD'], description: 'Choose the env to deploy', name: 'Environement'
+        booleanParam description: 'Choose the boolean value', name: 'Chooose Boolean '
+        }
+    }
+
+    Stages {
+
+        stage ('QA'){
+            steps {
+                echo "THIS IS QA STAGE"
+            }
+        }
+
+        stage ('TEST') {
+            steps {
+                echo "THis is test stage"
+            }
+        }
+        stage ('PROD') {
+            echo "this is prod stage"
+        }
+    }
+
+}
