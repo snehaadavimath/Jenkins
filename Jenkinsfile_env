@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    environment {
+        APP = "Jenkins"
+        BRANCH = "main"
+        GIT_URL = 'https://github.com/harshaprakash100/ip_app.git'
+        CRED_ID = 'github_hp'
+}
+    stages {
+        stage ("STAGE1") {
+            steps {
+                sh '''
+                 ls -lrt
+                '''
+            }
+        }
+
+        stage ("STAGE2") {
+            steps {
+                script { echo "this is stage 2 build"}
+            }
+        }
+    }
+}
