@@ -4,9 +4,9 @@ pipeline{
 
     parameters {
        
-        string defaultValue: 'Branch', description: 'This is from the dlecraive generator', name: 'Sneha'
-        choice choices: ['TEST', 'QA', 'PROD'], description: 'Choose the env to deploy', name: 'Environement'
-        booleanParam description: 'Choose the boolean value', name: 'Chooose Boolean '
+        string (defaultValue: 'Branch', description: 'This is from the dlecraive generator', name: 'Sneha')
+        choice (choices: ['TEST', 'QA', 'PROD'], description: 'Choose the env to deploy', name: 'Environement')
+        booleanParam (description: 'Choose the boolean value', name: 'Chooose Boolean ')
         
     }
 
