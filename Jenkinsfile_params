@@ -10,21 +10,29 @@ pipeline{
         
     }
 
-    Stages {
+    stages {
 
-        stage ('QA'){
+        stage ('QA') {
             steps {
+                script {
                 echo "THIS IS QA STAGE"
+                }
             }
         }
 
         stage ('TEST') {
             steps {
+                script{
                 echo "THis is test stage"
+                }
             }
         }
         stage ('PROD') {
+            steps{
+                script{
             echo "this is prod stage"
+                }
+            }
         }
     }
 
