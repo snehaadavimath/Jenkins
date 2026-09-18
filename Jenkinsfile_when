@@ -24,8 +24,9 @@ pipeline{
 
         stage (STAGE2) {
             when {
+             expression{
                 stageResult == 'SUCCESS'
-
+                }
             }
             steps {
                 sh ''' ps -ef'''
