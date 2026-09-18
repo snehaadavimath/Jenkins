@@ -1,0 +1,35 @@
+def stageResult = ''
+
+pipeline{
+    agent any
+
+
+    stages {
+
+        stage ('STAGE1') {
+            steps {
+                script{
+                    try{
+                    sh'''
+                     ls -lrt'''
+                     stageResult = 'SUCCESS'
+                    }catch(Exception e){
+                        echo "caught an exception: ${e.message}"
+                        stageResult = 'FAILED'
+
+                    }
+                }
+            }
+        }
+
+        stage (STAGE2) {
+            when {
+                stageResult == 'SUCCESS'
+
+            }
+            steps {
+                sh ''' ps -ef'''
+            }
+        }
+    }
+}
