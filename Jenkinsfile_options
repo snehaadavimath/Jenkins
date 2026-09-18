@@ -9,7 +9,7 @@ pipeline{
         stage ('STAGE1'){
             steps {
                 sh '''
-                    sleep 30
+                    // sleep 30
                     ls -lrt
 
                 '''
@@ -19,7 +19,7 @@ pipeline{
         stage ('STAGE2'){
             steps {
                 sh '''
-                    sleep 30
+                    // sleep 30
                     PWD
 
                 '''
