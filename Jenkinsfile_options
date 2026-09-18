@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    options {
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '')
+        timeout(time: 10, unit: 'SECONDS')
+        disableConcurrentBuilds()
+    }
+    stages {
+        stage ('STAGE1'){
+            steps {
+                sh '''
+                    sleep 30
+                    ls -lrt
+
+                '''
+            }
+        }
+
+        stage ('STAGE2'){
+            steps {
+                sh '''
+                    sleep 30
+                    PWD
+
+                '''
+            }
+        }
+    }
+}
