@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+
+    stages {
+        stage ("STAGE1"){
+            steps{
+                echo 'this is sequential stage'
+            }
+        }
+        stage ("STAGE2"){
+            parallel{
+                stage ('SUB_STAGE_1'){
+                    steps {
+                        sh '''ls -lrt'''
+                    }
+                }
+                stage ('SUB_STAGE_2'){
+                    steps {
+                        sh '''pwd'''
+                    }
+                }
+            }
+        }
+
+        stage ("STAGE3"){
+            steps{
+                echo 'this is sequential stage'
+            }
+        }
+
+    }
+}
