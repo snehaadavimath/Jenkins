@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages {
+        stage ('STAGE1'){
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/snehaadavimath/Scripts.git',
+                    credentialsId: '39d80a8a-0806-486c-aa00-113ddfb959aa'
+            }
+        }
+
+    stage ('STAGE2'){
+            steps {
+                sh '''ls -lrt'''
+            }
+        }
+    }
+
+}
