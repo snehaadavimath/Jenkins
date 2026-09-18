@@ -19,9 +19,7 @@ pipeline{
         stage ('STAGE2'){
             steps {
                 sh '''
-                     
-                    PWD
-
+                    ps -ef
                 '''
             }
         }
